@@ -49,8 +49,8 @@ jobs:
 
     # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
     # If this step fails, then you should remove it and run the build manually (see below)
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v1
+    # - name: Autobuild
+    #   uses: github/codeql-action/autobuild@v1
 
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 https://git.io/JvXDl
@@ -59,9 +59,22 @@ jobs:
     #    and modify them (or add more) to build your code if your project
     #    uses a compiled language
 
-    #- run: |
-    #   make bootstrap
-    #   make release
+    - run: |
+       dotnet build day2/apps/dotnetcore/Scm/Adc.Scm.Api/Adc.Scm.Api.csproj
+       dotnet build day3/apps/dotnetcore/Scm/Adc.Scm.Api/Adc.Scm.Api.csproj
+       dotnet build day4/apps/dotnetcore/Scm/Adc.Scm.Api/Adc.Scm.Api.csproj
+       dotnet build day5/apps/dotnetcore/Scm/Adc.Scm.Api/Adc.Scm.Api.csproj
+       dotnet build day7/apps/dotnetcore/Scm/Adc.Scm.Api/Adc.Scm.Api.csproj
+       dotnet build day2/apps/dotnetcore/Scm.Resources/Adc.Scm.Resources.Api/Adc.Scm.Resources.Api.csproj
+       dotnet build day3/apps/dotnetcore/Scm.Resources/Adc.Scm.Resources.Api/Adc.Scm.Resources.Api.csproj
+       dotnet build day4/apps/dotnetcore/Scm.Resources/Adc.Scm.Resources.Api/Adc.Scm.Resources.Api.csproj
+       dotnet build day5/apps/dotnetcore/Scm.Resources/Adc.Scm.Resources.Api/Adc.Scm.Resources.Api.csproj
+       dotnet build day6/apps/dotnetcore/Scm.Resources/Adc.Scm.Resources.Api/Adc.Scm.Resources.Api.csproj
+       dotnet build day2/apps/dotnetcore/Scm.Search/Adc.Scm.Search.Api/Adc.Scm.Search.Api.csproj
+       dotnet build day3/apps/dotnetcore/Scm.Search/Adc.Scm.Search.Api/Adc.Scm.Search.Api.csproj
+       dotnet build day4/apps/dotnetcore/Scm.Search/Adc.Scm.Search.Api/Adc.Scm.Search.Api.csproj
+       dotnet build day5/apps/dotnetcore/Scm.Search/Adc.Scm.Search.Api/Adc.Scm.Search.Api.csproj
+       dotnet build day7/apps/dotnetcore/Scm.Search/Adc.Scm.Search.Api/Adc.Scm.Search.Api.csproj
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
